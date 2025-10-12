@@ -148,6 +148,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f563fcc2de1ee7d4a9be5dc4b81ef9d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  Casilla: {fileID: 7886305574975620441, guid: a776d810a6de1794cbf17a38f9aba756, type: 3}
+  filas: 5
+  columnas: 9
+  posicionInicial: {x: -4.19, y: -3.5, z: 0}
 --- !u!4 &187118826
 Transform:
   m_ObjectHideFlags: 0
