@@ -1,19 +1,19 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 public class casillaScript : MonoBehaviour
 {
 
     public bool ocupado = false;
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public GameObject plantaActual;
+
+    public void plantar(GameObject plantaPrefab)
     {
-        
+        if (!ocupado)
+        {
+            plantaActual = Instantiate(plantaPrefab, transform.position, quaternion.identity);
+            ocupado = true;
+        }
     }
 }
