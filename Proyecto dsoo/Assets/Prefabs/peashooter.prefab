@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6522042476476634415}
   - component: {fileID: 2022502476573233035}
   - component: {fileID: 2641840414590108939}
+  - component: {fileID: 5232536010025432581}
   m_Layer: 0
   m_Name: peashooter
   m_TagString: Untagged
@@ -150,3 +151,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.87, y: 0.44}
   m_EdgeRadius: 0
+--- !u!114 &5232536010025432581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4486411235658229523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f2fe6ecf6f13384b883e901f096ca25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::plantas
+  semillaPlanta: {fileID: -4325823944903573049, guid: 33ace4b1e3a76ad49a7d222f49bb1f45, type: 3}
+  precio: 100

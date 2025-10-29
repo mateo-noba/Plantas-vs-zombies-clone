@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI textoSoles;
 
+    public semillero semilleroScript;
 
     void Start()
     {
@@ -28,7 +29,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        actualizarSol();
+        agregarSoles(0);
     }
 
     public void agregarSoles(int cantidad)
@@ -60,6 +61,22 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(r.origin, r.direction);
+            if(hit.collider != null)
+            {
+                if(Casilla.transform.childCount < 1)
+                {
+                    Transform t = hit.collider.transform;
+                    if(t.childCount == 0)
+                    {
+                        GameObject planta = Instantiate(semilleroScript.plantasUsar[1].gameObject, t.position, gameObject.transform.rotation);
+                        planta.transform.SetParent(t);
+                    }
+                }
+            }
+        }
     }
 }
