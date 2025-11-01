@@ -1,33 +1,21 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class sun : MonoBehaviour
 {
 
     public int valor = 25;
-    public float duracion = 10f;
+    public float duracion = 20f;
+
+    GameManager gameManager;
 
     private void Start()
     {
-        //Destroy(gameObject, duracion);
+        
+        Destroy(gameObject, duracion);
     }
 
-    public void OnMouseDown()
-    {
-        Debug.Log("Click");
-        GameManager gameManager = FindAnyObjectByType<GameManager>();
 
-        if (gameManager != null)
-        {
-            gameManager.agregarSoles(valor);
-            Destroy(gameObject);
-
-        }
-    }
-
-    public void OnMouseOver()
-    {
-        Debug.Log("Arriba");
-    }
 
     void Update()
     {

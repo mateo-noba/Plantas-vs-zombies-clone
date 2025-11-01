@@ -8,6 +8,7 @@ public class semillero : MonoBehaviour
 
     public GameObject semilleroPlantas;
     public GameObject cartaPlantaPrefab;
+    public int numeroPlanta = -1;
     void Start()
     {
         for(int i = 0; i < plantasUsar.Count; i++)
@@ -20,6 +21,10 @@ public class semillero : MonoBehaviour
             Image cartaImagen = crearCarta.GetComponent<Image>();
             cartaImagen.sprite = plantasUsar[i].semillaPlanta;
 
+            Button btn = crearCarta.GetComponent<Button>();
+            int j = i;
+            btn.onClick.RemoveAllListeners();
+            btn.onClick.AddListener(() => { numeroPlanta = j; });
         }
     }
 

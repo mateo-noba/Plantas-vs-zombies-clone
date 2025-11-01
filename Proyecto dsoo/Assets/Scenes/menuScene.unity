@@ -1865,6 +1865,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: menuButton
       objectReference: {fileID: 0}
+    - target: {fileID: 6817935876560548152, guid: 37072773ae19fac4080fa37e000a6c26, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6817935876560548152, guid: 37072773ae19fac4080fa37e000a6c26, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6817935876560548152, guid: 37072773ae19fac4080fa37e000a6c26, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8968108918995823500, guid: 37072773ae19fac4080fa37e000a6c26, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1

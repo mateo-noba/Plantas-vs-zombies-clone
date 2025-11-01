@@ -2,9 +2,21 @@ using UnityEngine;
 
 public class zombie : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    public int vida;
+    public int velocidad;
+
+    void OnTriggerEnter2D(Collider2D col)
     {
+        if (col.CompareTag("Gisante"))
+        {
+            vida--;
+            Destroy(col.gameObject);
+            if(vida <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
         
     }
 

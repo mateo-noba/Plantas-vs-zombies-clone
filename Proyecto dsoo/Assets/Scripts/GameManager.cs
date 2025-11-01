@@ -5,14 +5,9 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject Casilla;
-    public int filas = 5;
-    public int columnas = 9;
-    float separacionX = 1.4f;
-    float separacionY = 1.6f;
     public Vector3 posicionInicial = new Vector3(0, 0, 0);
 
-    public int soles = 50;
+    public int soles;
 
     public TextMeshProUGUI textoSoles;
 
@@ -20,15 +15,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        for (int y = 0; y < filas; y++)
-        {
-            for (int x = 0; x < columnas; x++)
-            {
-                Vector3 posicion = posicionInicial + new Vector3(x * separacionX, y * separacionY, 0);
-                Instantiate(Casilla, posicion, quaternion.identity, transform);
-            }
-        }
-
         agregarSoles(0);
     }
 
@@ -40,20 +26,20 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public Boolean gastarSoles(int cantidad)
+    public void gastarSoles(int cantidad)
     {
         if (soles >= cantidad)
         {
             soles -= cantidad;
             actualizarSol();
-            return true;
+            return;
         }
-        return false;
+        return;
     }
 
     private void actualizarSol()
     {
-        if(textoSoles != null)
+        if (textoSoles != null)
         {
             textoSoles.text = soles.ToString();
         }
@@ -63,20 +49,52 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            
             Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(r.origin, r.direction);
-            if(hit.collider != null)
+            if (hit.collider != null)
             {
-                if(Casilla.transform.childCount < 1)
+                Debug.Log("Hice click sobre: " + hit.collider.name + " (Tag: " + hit.collider.tag + ")");
+
+                if (hit.collider.CompareTag("Casilla"))
                 {
                     Transform t = hit.collider.transform;
-                    if(t.childCount == 0)
+                    if (t.childCount == 0)
                     {
-                        GameObject planta = Instantiate(semilleroScript.plantasUsar[1].gameObject, t.position, gameObject.transform.rotation);
-                        planta.transform.SetParent(t);
+                        if (semilleroScript.numeroPlanta < 0 || semilleroScript.numeroPlanta > semilleroScript.plantasUsar.Count)
+                        {
+                            return;
+                        }
+                        CrearPlanta(semilleroScript.numeroPlanta, t);
                     }
+
                 }
+                else if (hit.collider.CompareTag("Sol"))
+                {
+                    agregarSoles(25);
+                    Destroy(hit.collider.gameObject);
+                }
+                
+                
             }
         }
+    }
+    void CrearPlanta(int numero, Transform t)
+    {
+        if (semilleroScript.plantasUsar[numero].precio > soles)
+        {
+            return;
+        }
+        if (numero < 0 || numero >= semilleroScript.plantasUsar.Count)
+        {
+            return; // si no hay planta válida seleccionada, no hagas nada
+        }
+        
+
+        GameObject planta = Instantiate(semilleroScript.plantasUsar[numero].gameObject, t.position, gameObject.transform.rotation);
+        planta.transform.SetParent(t);
+        gastarSoles(semilleroScript.plantasUsar[numero].precio);
+        semilleroScript.numeroPlanta = -1;
+
     }
 }
