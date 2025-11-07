@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Casilla
   - Sol
+  - Guisante
+  - Perder
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - Water
   - UI
   - Zombie
-  - 
+  - Planta
   - 
   - 
   - 

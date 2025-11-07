@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 6560194532936161724}
   - component: {fileID: 38267914308069238}
   - component: {fileID: 3380262925879384637}
-  m_Layer: 0
+  - component: {fileID: -181553432658623930}
+  m_Layer: 7
   m_Name: wall-nut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2013194893784949483}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1073, y: 1344.1663, z: 0}
+  m_LocalPosition: {x: 1073, y: 1344.1663, z: 1}
   m_LocalScale: {x: 0.1991048, y: 0.2438257, z: 0.04251835}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47,6 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::plantas
   semillaPlanta: {fileID: -6621399272459155314, guid: ce2b4c34b6502c94e8daa42cc1b50f52, type: 3}
   precio: 50
+  vida: 100
+  tiempoRecarga: 30
 --- !u!212 &3380262925879384637
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -105,3 +108,49 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &-181553432658623930
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013194893784949483}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.9, y: 5.67}
+    newSize: {x: 4.9, y: 5.67}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 4.9, y: 5.67}
+  m_EdgeRadius: 0

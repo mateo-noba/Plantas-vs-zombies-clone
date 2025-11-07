@@ -5,11 +5,18 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public Vector3 posicionInicial = new Vector3(0, 0, 0);
 
     public int soles;
 
     public TextMeshProUGUI textoSoles;
+
+    public TextMeshProUGUI textoTiempo;
+
+    public float tiempoJugado = 0f;
+
+    public TextMeshProUGUI textoPuntaje;
+
+    public int puntajeActual = 0;
 
     public semillero semilleroScript;
 
@@ -21,7 +28,6 @@ public class GameManager : MonoBehaviour
     public void agregarSoles(int cantidad)
     {
         soles += cantidad;
-        Debug.Log(soles);
         actualizarSol();
 
     }
@@ -45,16 +51,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void actualizarPuntaje(int cantidad)
+    {
+        puntajeActual += cantidad;
+        textoPuntaje.text = $"Puntaje: {puntajeActual}";
+    }
+
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            
+
             Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(r.origin, r.direction);
             if (hit.collider != null)
             {
-                Debug.Log("Hice click sobre: " + hit.collider.name + " (Tag: " + hit.collider.tag + ")");
+                //Debug.Log("Hice click sobre: " + hit.collider.name + " (Tag: " + hit.collider.tag + ")");
 
                 if (hit.collider.CompareTag("Casilla"))
                 {
@@ -74,10 +87,15 @@ public class GameManager : MonoBehaviour
                     agregarSoles(25);
                     Destroy(hit.collider.gameObject);
                 }
-                
-                
+
+
             }
         }
+
+        tiempoJugado += Time.deltaTime;
+        int minutos = Mathf.FloorToInt(tiempoJugado / 60);
+        int segundos = Mathf.FloorToInt(tiempoJugado % 60);
+        textoTiempo.text = $"Tiempo: {minutos:00}:{segundos:00}";
     }
     void CrearPlanta(int numero, Transform t)
     {

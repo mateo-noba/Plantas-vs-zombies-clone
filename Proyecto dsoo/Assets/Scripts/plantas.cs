@@ -4,16 +4,17 @@ public class plantas : MonoBehaviour
 {
     public Sprite semillaPlanta;
     public int precio;
+    public int vida;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public float tiempoRecarga = 0f;
 
-    // Update is called once per frame
-    void Update()
+
+    void morderPlanta()
     {
-        
+        vida--;
+        if(vida <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

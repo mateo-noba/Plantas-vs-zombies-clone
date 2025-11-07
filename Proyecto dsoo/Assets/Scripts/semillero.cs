@@ -27,10 +27,4 @@ public class semillero : MonoBehaviour
             btn.onClick.AddListener(() => { numeroPlanta = j; });
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7092613546191247451}
   m_Layer: 0
   m_Name: pea
-  m_TagString: Untagged
+  m_TagString: Guisante
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0524f75e55a6af45bc0806c852b851a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  velocidad: 5
+  "da\xF1o": 1
 --- !u!61 &6941173619366380720
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -76,7 +78,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

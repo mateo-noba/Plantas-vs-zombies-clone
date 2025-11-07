@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3205054291908163708}
   - component: {fileID: 5424132536348936204}
   - component: {fileID: -3120991371638769391}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: sunflower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2799344073944882978}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.01, y: 3.17, z: 2}
+  m_LocalPosition: {x: -4.01, y: 3.17, z: 1}
   m_LocalScale: {x: 0.46032366, y: 0.46032366, z: 0.46032366}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c475da53f00db6748ae76d93e703c0c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  frecuenciaSol: 1
+  frecuenciaSol: 10
   Sol: {fileID: 6000222819525415603, guid: b7c580ce189b0ca4b97b1f3e7a992166, type: 3}
 --- !u!114 &-3120991371638769391
 MonoBehaviour:
@@ -168,6 +168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::plantas
   semillaPlanta: {fileID: 3098821913479576613, guid: 70ee0439a739c3e41bfecced38dad70e, type: 3}
   precio: 50
+  vida: 4
+  tiempoRecarga: 7.5
 --- !u!1 &3924319714303483447
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2372340691111284612}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ocupado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
