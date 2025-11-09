@@ -152,3 +152,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::sun
   valor: 25
   duracion: 20
+  gameManager: {fileID: 0}
+  solPrefab: {fileID: 6000222819525415603}

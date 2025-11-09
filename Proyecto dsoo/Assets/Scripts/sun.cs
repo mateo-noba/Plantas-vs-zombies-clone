@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,9 +10,11 @@ public class sun : MonoBehaviour
 
     public GameManager gameManager;
 
+    public GameObject solPrefab;
+
     private void Start()
     {
-        
+
         Destroy(gameObject, duracion);
     }
 }

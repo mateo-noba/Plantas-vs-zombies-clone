@@ -7,7 +7,6 @@ public class peashooter : MonoBehaviour
     public GameObject Guisante;
     public Transform cañon;
     public LayerMask layerZombie;
-
     IEnumerator Start()
     {
         while (true)

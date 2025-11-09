@@ -4,58 +4,10 @@ using UnityEngine;
 
 public class generadorZombie : MonoBehaviour
 {
-    /*
-        public GameObject zombie;
-
-        public GameObject[] genradores;
-
-        public float tiempoMinimo = 10f;
-
-        public float tiempoMaximo = 20f;
-
-        public float tiempoReduccion = 0.05f;
-
-
-        void Start()
-        {
-            StartCoroutine(GenerarZombie());
-        }
-
-        IEnumerator GenerarZombie()
-        {
-            float retrasoInicial = Random.Range(10f, 20f);
-            yield return new WaitForSeconds(retrasoInicial);
-            float probabilidadSpawneo = Random.Range(10, 100);
-            if(probabilidadSpawneo < 50)
-            {
-                while (true)
-                {
-
-                    float tiempoEspera = Random.Range(tiempoMinimo, tiempoMaximo);
-                    yield return new WaitForSeconds(tiempoEspera);
-                    GameObject go = Instantiate(zombie, transform.position, zombie.transform.rotation) as GameObject;
-
-
-                    if (tiempoMaximo > 3f)
-                    {
-                        tiempoMaximo -= tiempoReduccion;
-                    }
-
-                    if (tiempoMinimo > 1f)
-                    {
-                        tiempoMinimo -= tiempoReduccion / 2f;
-                    }
-                }
-            }
-        }*/
-
     public GameObject zombie;
 
-    [Header("Configuración por Fila")]
     public float probabilidadSpawn = 0.3f; // Probabilidad base para esta fila
     public float variacionProbabilidad = 0.2f; // Variación aleatoria
-
-    // Referencia al controlador central (opcional)
 
     public controladorZombie controladorCentral;
 

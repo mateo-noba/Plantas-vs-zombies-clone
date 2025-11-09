@@ -1,5 +1,4 @@
-using System;
-using Unity.Mathematics;
+using System.Collections;
 using UnityEngine;
 using TMPro;
 
@@ -16,13 +15,34 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI textoPuntaje;
 
+    public TextMeshProUGUI textoPuntajeFinal;
+
     public int puntajeActual = 0;
 
     public semillero semilleroScript;
 
+    public GameObject solPrefab;
+
+    public bool perder;
+
+    public GameObject panelPerder;
+
+    public float minX = -3f;
+
+    public float maxX = 7f;
+
+    public float minY = -3f;
+
+    public float maxY = 3f;
+
+    public botonesMenu botonesScript;
+
+    bool modoPala = false;
+
     void Start()
     {
         agregarSoles(0);
+        StartCoroutine(generarSolAleatorio());
     }
 
     public void agregarSoles(int cantidad)
@@ -55,40 +75,51 @@ public class GameManager : MonoBehaviour
     {
         puntajeActual += cantidad;
         textoPuntaje.text = $"Puntaje: {puntajeActual}";
+        textoPuntajeFinal.text = $"Puntaje final: {puntajeActual}";
     }
 
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if(botonesScript.juegoPausado != true && perder != true)
         {
-
-            Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(r.origin, r.direction);
-            if (hit.collider != null)
+            if (Input.GetMouseButtonDown(0))
             {
-                //Debug.Log("Hice click sobre: " + hit.collider.name + " (Tag: " + hit.collider.tag + ")");
 
-                if (hit.collider.CompareTag("Casilla"))
+                Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit2D hit = Physics2D.Raycast(r.origin, r.direction);
+                if (hit.collider != null)
                 {
-                    Transform t = hit.collider.transform;
-                    if (t.childCount == 0)
+                    Debug.Log("Hice click sobre: " + hit.collider.name + " (Tag: " + hit.collider.tag + ")");
+
+                    if (hit.collider.CompareTag("Casilla"))
                     {
-                        if (semilleroScript.numeroPlanta < 0 || semilleroScript.numeroPlanta > semilleroScript.plantasUsar.Count)
+                        Transform t = hit.collider.transform;
+                        if (t.childCount == 0)
                         {
+                            if (semilleroScript.numeroPlanta < 0 || semilleroScript.numeroPlanta > semilleroScript.plantasUsar.Count)
+                            {
+                                return;
+                            }
+                            CrearPlanta(semilleroScript.numeroPlanta, t);
+                        }
+
+                    }
+                    else if (hit.collider.CompareTag("Sol"))
+                    {
+                        agregarSoles(25);
+                        Destroy(hit.collider.gameObject);
+                    }
+                    else if (hit.collider.CompareTag("Planta"))
+                    {
+                        if (modoPala)
+                        {
+                            Destroy(hit.collider.gameObject);
+                            modoPala = false;
                             return;
                         }
-                        CrearPlanta(semilleroScript.numeroPlanta, t);
                     }
-
                 }
-                else if (hit.collider.CompareTag("Sol"))
-                {
-                    agregarSoles(25);
-                    Destroy(hit.collider.gameObject);
-                }
-
-
             }
         }
 
@@ -96,6 +127,12 @@ public class GameManager : MonoBehaviour
         int minutos = Mathf.FloorToInt(tiempoJugado / 60);
         int segundos = Mathf.FloorToInt(tiempoJugado % 60);
         textoTiempo.text = $"Tiempo: {minutos:00}:{segundos:00}";
+
+        if(perder == true)
+        {
+            panelPerder.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
     void CrearPlanta(int numero, Transform t)
     {
@@ -107,12 +144,37 @@ public class GameManager : MonoBehaviour
         {
             return; // si no hay planta válida seleccionada, no hagas nada
         }
-        
 
         GameObject planta = Instantiate(semilleroScript.plantasUsar[numero].gameObject, t.position, gameObject.transform.rotation);
         planta.transform.SetParent(t);
         gastarSoles(semilleroScript.plantasUsar[numero].precio);
         semilleroScript.numeroPlanta = -1;
+        semilleroScript.ActivarRecargaManual(numero);
+    }
 
+    IEnumerator generarSolAleatorio()
+    {
+        while (true)
+        {
+            float x = Random.Range(minX, maxX);
+
+            float inicioY = maxY + 4f;
+
+            Vector3 inicio = new Vector3(x, inicioY, 0);
+
+            float finalY = Random.Range(minY, maxY);
+            yield return new WaitForSeconds(Random.Range(3f, 5f));
+            GameObject sol = Instantiate(solPrefab, inicio, Quaternion.identity);
+            while (sol != null && sol.transform.position.y > finalY)
+            {
+                sol.transform.position += Vector3.down * 2f * Time.deltaTime;
+                yield return null;
+            }
+        }
+    }
+
+    public void activarPala()
+    {
+        modoPala = true;
     }
 }

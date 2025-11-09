@@ -13,9 +13,9 @@ public class zombie : MonoBehaviour
 
     void Awake()
     {
-        if(gameManagerScript == null)
+        if (gameManagerScript == null)
         {
-            gameManagerScript = FindAnyObjectByType<GameManager>(); 
+            gameManagerScript = FindAnyObjectByType<GameManager>();
         }
     }
 
@@ -35,7 +35,7 @@ public class zombie : MonoBehaviour
         if(col.CompareTag("Perder"))
         {
             Destroy(gameObject);
-            print("Perdiste");
+            gameManagerScript.perder = true;
         }
         
     }
