@@ -1,0 +1,39 @@
+body{
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.logoJuego{
+    width: 5%;
+    height: 5%;
+}
+
+.barraDeNavegacion{
+    display: inline-flex;
+    vertical-align: middle;
+    background-color: yellowgreen;
+    flex-direction: row;
+    align-content: flex-end;
+    justify-content: space-around;;
+    align-items: center;
+}
+
+.partePrincipal{
+    background-image: url("Imagenes/fondoPagina.jpg");
+    background-size: cover;
+    background-position: center;        
+    background-repeat: no-repeat;  
+    width: 100%;
+    height: 50%;
+}
+
+.pieDePagina{
+    background-color: black;
+}
