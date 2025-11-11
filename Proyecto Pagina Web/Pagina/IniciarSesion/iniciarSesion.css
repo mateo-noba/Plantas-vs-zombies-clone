@@ -1,0 +1,73 @@
+body{
+    margin: 0px;
+    width: 100%;
+    height: 110vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.logoJuego{
+    width: 10vh;
+    height: 10vh;
+    margin: 0px;
+}
+
+.barraDeNavegacion{
+    display: inline-flex;
+    vertical-align: middle;
+    background-color: yellowgreen;
+    flex-direction: row;
+    align-content: flex-end;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
+    width: 100%;
+    height: 10vh;
+    margin: 0px;
+}
+
+.barraDeNavegacion a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+.barraDeNavegacion a:hover {
+  text-decoration: underline;
+}
+
+.partePrincipal{
+    background-image: url("/Imagenes/fondo.avif");
+    background-size: cover;
+    background-position: center;        
+    background-repeat: no-repeat;  
+    width: 100%;
+    height: 100vh;
+    margin: 0px;
+}
+
+.overlay{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(30, 29, 29, 0.6);
+    display: flex;                
+    justify-content: center;      
+    align-items: center; 
+}
+
+.parteIniciarSesion{
+    width: 80vh;
+    height: 90vh;
+    background-color: rgb(33, 37, 41);;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.pieDePagina{
+    width: 100%;
+    height: 20vh;
+    background-color: rgb(33, 37, 41);
+    margin: 0px;
+}
