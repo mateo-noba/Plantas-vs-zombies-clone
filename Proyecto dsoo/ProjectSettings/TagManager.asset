@@ -58,11 +58,11 @@ TagManager:
   - name: Effects
     uniqueID: 3193283997
     locked: 0
-  - name: UI
-    uniqueID: 31633895
-    locked: 0
   - name: Sol
     uniqueID: 1519032815
+    locked: 0
+  - name: UI
+    uniqueID: 31633895
     locked: 0
   m_RenderingLayers:
   - Default
