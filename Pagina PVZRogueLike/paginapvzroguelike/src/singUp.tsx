@@ -10,18 +10,26 @@ export function SingUp(){
            <Navbar/>
             <div className="partePrincipal">
                 <div className="overlay">
-                    <div className="parteIniciarSesion">
-                        <div className="divIniciarSesion">
-                            <img className="logoJuegoSesion" src={logoPVZroguelike} alt="Logo"/>
-                            <h2>Registrarse</h2>
+                    <div className="parteRegistro">
+                        <div className="divRegistro">
+                            <img className="logoJuegoRegistro" src={logoPVZroguelike} alt="Logo"/>
+                            <h2>Crear cuenta</h2>
                         </div>
                         <div className="divFormulario">
                             <form>
+                                <label>Nombre de usuario</label>
+                                <br/>
+                                <input type="text"/>
+                                <br/>
                                 <label>Email</label>
                                 <br/>
                                 <input type="email"/>
                                 <br/>
                                 <label>Contraseña</label>
+                                <br/>
+                                <input type="password"/>
+                                <br></br>
+                                <label>Confirmar contraseña</label>
                                 <br/>
                                 <input type="password"/>
                                 <a><button>Iniciar sesión</button></a>

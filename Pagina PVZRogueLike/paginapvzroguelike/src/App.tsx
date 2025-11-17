@@ -1,9 +1,11 @@
 import type React from 'react';
 import {createBrowserRouter, Outlet, RouterProvider} from 'react-router-dom';
 import './App.css';
-import { MainPart } from './mainpart';
+import { MainPart } from './mainPart';
 import { Login } from './logIn';
 import { SingUp } from './singUp';
+import { ScoreBoard } from './scoreBoard';
+import { AboutUs } from './aboutUs';
 
 function Pagina() {
   return (
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
       {
         path: 'crearCuenta',
         element: <SingUp/>
+      },
+      {
+        path: 'clasificaciones',
+        element: <ScoreBoard/>
+      },
+      {
+        path: 'sobreNosotros',
+        element: <AboutUs/>
       }
     ]
   }

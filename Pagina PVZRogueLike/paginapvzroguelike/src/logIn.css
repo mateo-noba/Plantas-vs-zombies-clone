@@ -3,7 +3,7 @@
     height: 80vh;
     background-color: rgb(33, 37, 41);
     color: white;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: bold;
     display: flex;                
     justify-content: center;      
@@ -16,24 +16,45 @@
 
 .parteIniciarSesion h2{
     margin: 0;
+    font-size: 30px;
 }
 
 .logoJuegoSesion{
-    width: 30vh;
-    height: 30vh;
+    width: 20vh;
+    height: 20vh;
 }
 
 .divIniciarSesion{
     margin-bottom: 40px;
+    display: flex;                
+    justify-content: center;      
+    align-items: center; 
+    flex-direction: column;
 }
 
 .divFormulario input{
     width: 30vh;
-    height: 5vh;
+    height: 4.5vh;
     margin-bottom: 20px;
     background-color: #1D2125;
     color: white;
     border: solid 1px white;
+}
+
+#inputContraseña{
+    margin-bottom: 10px;
+}
+
+.divFormulario p{
+    font-size: 11px;
+    color: #0366D6;
+    margin: 0;
+}
+
+.divFormulario a{
+    text-decoration: none;
+    color: #0366D6;
+    margin: 0;
 }
 
 .divFormulario button{
@@ -49,4 +70,8 @@
     color: white;
     font-size: 20px;
     border: none;
+}
+
+.redireccionesDeCuenta{
+    margin: 0;
 }

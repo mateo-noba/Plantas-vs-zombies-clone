@@ -23,7 +23,8 @@ export function Login(){
                                 <br/>
                                 <label>Contraseña</label>
                                 <br/>
-                                <input type="password"/>
+                                <input id="inputContraseña" type="password"/>
+                                <p><a href="/crearCuenta">Crear cuenta?</a></p>
                                 <a><button>Iniciar sesión</button></a>
                             </form>
                         </div>

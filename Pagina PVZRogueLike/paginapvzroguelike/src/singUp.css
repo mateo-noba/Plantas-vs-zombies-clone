@@ -1,9 +1,9 @@
-.parteIniciarSesion{
+.parteRegistro{
     width: 70vh;
     height: 80vh;
     background-color: rgb(33, 37, 41);
     color: white;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: bold;
     display: flex;                
     justify-content: center;      
@@ -14,22 +14,27 @@
     filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.671));
 }
 
-.parteIniciarSesion h2{
+.parteRegistro h2{
     margin: 0;
+    font-size: 30px;
 }
 
-.logoJuegoSesion{
-    width: 30vh;
-    height: 30vh;
+.logoJuegoRegistro{
+    width: 10vh;
+    height: 10vh;
 }
 
-.divIniciarSesion{
+.divRegistro{
     margin-bottom: 40px;
+    display: flex;                
+    justify-content: center;      
+    align-items: center; 
+    flex-direction: column;
 }
 
 .divFormulario input{
     width: 30vh;
-    height: 5vh;
+    height: 4.5vh;
     margin-bottom: 20px;
     background-color: #1D2125;
     color: white;

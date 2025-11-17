@@ -1,0 +1,55 @@
+.parteSobreNosotros{
+    width: 100%;
+    height: 90vh;
+    margin: 0px;
+    background-image: url("./imagenes/fondoPagina.png");
+    background-size: cover;
+    background-position: center;        
+    background-repeat: no-repeat;  
+    display: flex;
+    align-items: flex-start;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.overlay{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(30, 29, 29, 0.6);
+    display: flex;                /* Activa Flexbox */
+    justify-content: center;      /* Centra horizontalmente */
+    align-items: center; 
+}
+
+.sobreNosotrosTexto{
+    width: 70%;
+    height: 80vh;
+    background-color: greenyellow;
+    border-radius: 20px;
+    display: block;
+    text-align: left;
+    color: white;
+}
+
+.texto{
+    width: auto;
+    height: 80%;
+    margin: 20px;
+    
+}
+
+.texto h3{
+    margin: 0px;
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+.texto p{
+    font-size: 20px;
+    line-height: 1.5;
+}
+
