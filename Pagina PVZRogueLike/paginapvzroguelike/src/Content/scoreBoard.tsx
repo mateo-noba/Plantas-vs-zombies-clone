@@ -1,6 +1,6 @@
 import './scoreBoard.css';
-import { Navbar } from './header';
-import { Footer } from './footer';
+import { Navbar } from '../Components/header';
+import { Footer } from '../Components/footer';
 
 export function ScoreBoard(){
 

@@ -1,6 +1,6 @@
-import { Footer } from "./footer";
-import { Navbar } from "./header";
-import logoPVZroguelike from './imagenes/fondoPVZroguelike.png';
+import { Footer } from "../Components/footer";
+import { Navbar } from "../Components/header";
+import logoPVZroguelike from '../imagenes/fondoPVZroguelike.png';
 import './logIn.css';
 
 

@@ -2,7 +2,7 @@
     width: 100%;
     height: 90vh;
     margin: 0px;
-    background-image: url("./imagenes/fondoPagina.png");
+    background-image: url("../imagenes/fondoPagina.png");
     background-size: cover;
     background-position: center;        
     background-repeat: no-repeat;  
@@ -28,7 +28,7 @@
 .sobreNosotrosTexto{
     width: 70%;
     height: 80vh;
-    background-color: greenyellow;
+    background-color: yellowgreen;
     border-radius: 20px;
     display: block;
     text-align: left;

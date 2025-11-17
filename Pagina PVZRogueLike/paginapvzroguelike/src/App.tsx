@@ -1,11 +1,11 @@
 import type React from 'react';
 import {createBrowserRouter, Outlet, RouterProvider} from 'react-router-dom';
 import './App.css';
-import { MainPart } from './mainPart';
-import { Login } from './logIn';
-import { SingUp } from './singUp';
-import { ScoreBoard } from './scoreBoard';
-import { AboutUs } from './aboutUs';
+import { MainPart } from './Content/mainPart';
+import { Login } from './Content/logIn';
+import { SingUp } from './Content/singUp';
+import { ScoreBoard } from './Content/scoreBoard';
+import { AboutUs } from './Content/aboutUs';
 
 function Pagina() {
   return (

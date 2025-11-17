@@ -1,6 +1,6 @@
-import { Footer } from "./footer";
-import { Navbar } from "./header";
-import logoPVZroguelike from './imagenes/fondoPVZroguelike.png';
+import { Footer } from "../Components/footer";
+import { Navbar } from "../Components/header";
+import logoPVZroguelike from '../imagenes/fondoPVZroguelike.png';
 import './singUp.css';
 
 
@@ -32,7 +32,7 @@ export function SingUp(){
                                 <label>Confirmar contraseña</label>
                                 <br/>
                                 <input type="password"/>
-                                <a><button>Iniciar sesión</button></a>
+                                <a><button>Crear cuenta</button></a>
                             </form>
                         </div>
                     </div>

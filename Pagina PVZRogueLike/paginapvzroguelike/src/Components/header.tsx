@@ -1,5 +1,5 @@
 import './header.css';
-import logoPVZroguelike from './imagenes/fondoPVZroguelike.png';
+import logoPVZroguelike from '../imagenes/fondoPVZroguelike.png';
 
 export function Navbar(){
     
