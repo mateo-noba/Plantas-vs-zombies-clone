@@ -10,7 +10,7 @@ export function MainPart(){
     
             <div className="partePrincipal">
                 <div className="overlay">
-                <a href="https://github.com/MateoBenjaminNobaFioriti/ProyectoDSOO.git" target="_blank"><button id="botonDescarga">Descargar</button></a>
+                <a href="https://drive.google.com/file/d/1sv2CL5S9kJ2iscKxDYLWNW4n0zlUpZ_6/view?usp=sharing" target="_blank"><button id="botonDescarga">Descargar</button></a>
                 </div>
             </div>
     
