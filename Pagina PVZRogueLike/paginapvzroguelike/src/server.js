@@ -14,7 +14,10 @@ mongoose.connect(process.env.MONGO_URI + "?retryWrites=true&w=majority&tls=true"
 .then(() => console.log("Mongo conetado"))
 .catch(err => console.log(err));
 
-
+mongoose.connection.on("connected", () => {
+    console.log("Conectado a:", mongoose.connection.name);
+    console.log("Colecciones:", Object.keys(mongoose.connection.collections));
+});
 
 app.use("/api", usersRoutes);
 

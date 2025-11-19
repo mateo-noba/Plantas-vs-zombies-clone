@@ -5,8 +5,8 @@ const UserSchema = new mongoose.Schema({
     nombreDeUsuario: {type: String},
     email: {type: String},
     contraseña: {type: String},
-    mejorPuntaje: {type: String},
-    ultimoPuntaje: {type: String}
-});
+    mejorPuntaje: {type: Number},
+    ultimoPuntaje: {type: Number}
+},{collection:"usuarios"});
 
 export default mongoose.model("User", UserSchema);
