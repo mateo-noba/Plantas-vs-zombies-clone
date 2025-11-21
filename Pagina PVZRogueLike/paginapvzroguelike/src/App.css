@@ -15,3 +15,6 @@ body{
   height: 120vh;
 }
 
+button:hover{
+  cursor: pointer;
+}

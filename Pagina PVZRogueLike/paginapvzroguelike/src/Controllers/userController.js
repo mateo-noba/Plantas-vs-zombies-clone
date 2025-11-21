@@ -1,5 +1,8 @@
-import { error } from "console";
 import User from "../Models/User.js";
+import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export const showUser = async (req, res) => {
     try{
@@ -43,19 +46,68 @@ export const sigUpUser = async (req, res) => {
 
         await nuevoUsuario.save();
 
-        res.status(201).json({ message: "Usuario creado con exito", usuarios: nuevoUsuario});
+        const token = jwt.sign(
+            {id: nuevoUsuario.id},
+            process.env.JWT_SECRET,
+            {expiresIn: "7d"}
+        );
+
+
+        res.json({
+            message: "Registro exitoso",
+            token,
+            usuario: {
+                id: nuevoUsuario.id,
+                nombreDeUsuario: nuevoUsuario.nombreDeUsuario,
+                email: nuevoUsuario.email
+            }
+        });
     }catch (error) {
         console.log(error);
         res.status(500).json({ message: "Error del servidor", error});
     }
 };
 
-/*export const createUser = async (req, res) => {
+export const logInUser = async (req, res) => {
     try{
-        const newUser = new User(req.body);
-        await newUser.save();
-    }catch(error){
-        console.log("No se pudo crear el usuario");
-        res.status(500).json({error: "Error al crear usuario"});
+        const {email, contraseña} = req.body;
+
+        const usuario = await User.findOne({email});
+
+        if(!usuario){
+            return res.status(404).json({message: "Usuario no encontrado"})
+        }
+        if(usuario.contraseña !== contraseña){
+            return res.status(400).json({message: "Contraseña incorrecta"});
+        }
+        const token = jwt.sign(
+            { id: usuario.id },
+            process.env.JWT_SECRET,
+            { expiresIn: "7d" }
+        );
+
+        res.json({
+            message: "Sesión iniciada",
+            token,
+            usuario: {
+                id: usuario.id,
+                nombreDeUsuario: usuario.nombreDeUsuario,
+                email: usuario.email
+            }
+        });
+    }catch (error){
+        res.status(500).json({message: "Error del servidor"});
     }
-}*/
+};
+
+export const scoreBoard = async (req, res) =>{
+    try{
+        const ranking = await User.find()
+        .sort({mejorPuntaje: -1})
+        .select("nombreDeUsuario mejorPuntaje ultimoPuntaje");
+
+        res.json(ranking);
+    }catch (error){
+        res.status(500).json({message: "Error al obtener el score board"})
+    }
+}

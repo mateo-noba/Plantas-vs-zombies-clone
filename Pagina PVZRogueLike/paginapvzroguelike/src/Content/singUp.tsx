@@ -3,6 +3,7 @@ import { Navbar } from "../Components/header";
 import logoPVZroguelike from '../imagenes/fondoPVZroguelike.png';
 import './singUp.css';
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 export function SingUp(){
@@ -11,7 +12,12 @@ export function SingUp(){
     const [contraseña, setContraseña] = useState("");
     const [repContraseña, setRepContraseña] = useState("");
 
-    const registro = async () => {
+    const Navigate = useNavigate();
+
+    const registro = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    
+        e.preventDefault();
+
         const respuesta = await fetch("http://localhost:3000/api/registro", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
@@ -21,6 +27,14 @@ export function SingUp(){
         const data = await respuesta.json();
         console.log(data);
         alert(data.message);
+        
+        if (data.token) {
+        localStorage.setItem("token", data.token);
+        window.location.reload(); // fuerza recargar el header actualizado
+        }
+        if(respuesta.ok){
+            Navigate("/")
+        }
     }
 
     return(
@@ -50,7 +64,7 @@ export function SingUp(){
                                 <label>Confirmar contraseña</label>
                                 <br/>
                                 <input type="password" onChange={(e) => setRepContraseña(e.target.value)}/>
-                                <button onClick={(e) => {e.preventDefault(); registro();}}>Crear cuenta</button>
+                                <button onClick={registro}>Crear cuenta</button>
                             </form>
                         </div>
                     </div>
