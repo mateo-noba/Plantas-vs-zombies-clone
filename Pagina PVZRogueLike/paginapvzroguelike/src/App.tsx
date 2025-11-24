@@ -6,6 +6,7 @@ import { Login } from './Content/logIn';
 import { SingUp } from './Content/singUp';
 import { ScoreBoard } from './Content/scoreBoard';
 import { AboutUs } from './Content/aboutUs';
+import { Account } from './Content/account';
 
 function Pagina() {
   return (
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: 'sobreNosotros',
         element: <AboutUs/>
+      },
+      {
+        path: 'cuenta',
+        element: <Account/>
       }
     ]
   }

@@ -23,6 +23,13 @@ export const sigUpUser = async (req, res) => {
             return res.status(400).json({message: "Faltan datos"});
         }
 
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailRegex.test(email)) {
+            return res.status(400).json({ message: "El email no es válido" });
+        }
+
+
         if(contraseña !== repContraseña){
             return res.status(400).json({message: "Las contraseñas no coinciden"});
         }

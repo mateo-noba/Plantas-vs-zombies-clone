@@ -32,13 +32,6 @@ export function Navbar(){
         cargarUsuario();
     }, []);
 
-    const logout = () => {
-        localStorage.removeItem("token");
-        setUsuario(null);
-        window.location.reload();
-    };
-
-
     return(
         <>
             {usuario ? (
@@ -49,8 +42,8 @@ export function Navbar(){
                 <p><a href="/sobreNosotros">Sobre nosotros</a></p>
                 <p><a href="/clasificaciones">Puntajes</a></p>
 
-                <p><a href="/iniciarSesion">{usuario.nombreDeUsuario}</a></p>
-                <p><a href="/cerrarsesion" onClick={logout}>Cerrar sesion</a></p>
+                <p><a href="/cuenta">{usuario.nombreDeUsuario}</a></p>
+                {/*<p><a href="/" >Cerrar sesion</a></p>*/}
             </div>
             ) : (
             <div className="barraDeNavegacion">

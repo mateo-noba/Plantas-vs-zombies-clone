@@ -27,10 +27,7 @@ export function Login(){
 
         if (data.token) {
         localStorage.setItem("token", data.token);
-        window.location.reload(); // fuerza recargar el header actualizado
-        }
-        if(respuesta.ok){
-            Navigate("/")
+        Navigate("/")
         }
     }
 
