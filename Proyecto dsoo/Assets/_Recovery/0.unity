@@ -1081,8 +1081,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1539122130}
-        m_TargetAssemblyTypeName: botonesMenu, Assembly-CSharp
+      - m_Target: {fileID: 1911764465}
+        m_TargetAssemblyTypeName: APIManager, Assembly-CSharp
         m_MethodName: Logout
         m_Mode: 1
         m_Arguments:
@@ -4020,8 +4020,6 @@ MonoBehaviour:
   emailInput: {fileID: 736643582}
   passwordInput: {fileID: 1358802632}
   mensaje: {fileID: 712264698}
-  botonIniciarSesion: {fileID: 1392581627}
-  botonCuenta: {fileID: 615997978}
 --- !u!1 &1556317129
 GameObject:
   m_ObjectHideFlags: 0
@@ -4637,7 +4635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3861248471984639650, guid: 37072773ae19fac4080fa37e000a6c26, type: 3}
       propertyPath: m_Name
-      value: botonIniciarSesion
+      value: menuButton
       objectReference: {fileID: 0}
     - target: {fileID: 5210582802339686845, guid: 37072773ae19fac4080fa37e000a6c26, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4735,6 +4733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   botonIniciarSesion: {fileID: 1392581627}
   botonCuenta: {fileID: 615997978}
+  logeado: 0
 --- !u!1001 &2004446069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4853,7 +4852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3861248471984639650, guid: 37072773ae19fac4080fa37e000a6c26, type: 3}
       propertyPath: m_Name
-      value: botonSalir
+      value: menuButton
       objectReference: {fileID: 0}
     - target: {fileID: 3861248471984639650, guid: 37072773ae19fac4080fa37e000a6c26, type: 3}
       propertyPath: m_IsActive
@@ -5292,7 +5291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3861248471984639650, guid: 37072773ae19fac4080fa37e000a6c26, type: 3}
       propertyPath: m_Name
-      value: botonCuenta
+      value: menuButton
       objectReference: {fileID: 0}
     - target: {fileID: 3861248471984639650, guid: 37072773ae19fac4080fa37e000a6c26, type: 3}
       propertyPath: m_IsActive
@@ -5442,7 +5441,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3861248471984639650, guid: 37072773ae19fac4080fa37e000a6c26, type: 3}
       propertyPath: m_Name
-      value: botonJugar
+      value: menuButton
       objectReference: {fileID: 0}
     - target: {fileID: 8968108918995823500, guid: 37072773ae19fac4080fa37e000a6c26, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

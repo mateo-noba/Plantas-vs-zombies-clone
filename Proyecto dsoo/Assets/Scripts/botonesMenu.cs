@@ -15,8 +15,16 @@ public class botonesMenu : MonoBehaviour
     public TMP_InputField emailInput;
     public TMP_InputField passwordInput;
     public TMP_Text mensaje;
+    public GameObject botonIniciarSesion;
+    public GameObject botonCuenta;
 
-
+    void Start()
+    {
+        if(botonCuenta != null && botonIniciarSesion != null)
+        {
+            AutoLogeo(); 
+        }
+    }
     public void jugar(string nombreScena)
     {
         SceneManager.LoadScene(nombreScena);
@@ -85,6 +93,8 @@ public class botonesMenu : MonoBehaviour
             {
                 mensaje.text = "Inicio de sesión exitoso";
                 Debug.Log("Funco");
+                botonIniciarSesion.SetActive(false);
+                botonCuenta.SetActive(true);
             }
             else
             {
@@ -92,6 +102,34 @@ public class botonesMenu : MonoBehaviour
                 Debug.Log("No fuco");
             }
         }));
+    }
+
+    public void Logout()
+    {
+        PlayerPrefs.DeleteKey("token");
+        PlayerPrefs.DeleteKey("username");
+        PlayerPrefs.Save();
+        Debug.Log("Sesión cerrada correctamente.");
+        botonIniciarSesion.SetActive(true);
+        botonCuenta.SetActive(false);
+    }
+
+    public void AutoLogeo()
+    {
+        string token = PlayerPrefs.GetString("token", "");
+
+        if(token != "")
+        {
+            Debug.Log("Usuario logueado: " + PlayerPrefs.GetString("username"));
+            
+            botonIniciarSesion.SetActive(false);
+            botonCuenta.SetActive(true);
+            
+        }
+        else
+        {
+            Debug.Log("No hay sesión guardada");
+        }
     }
 
 }

@@ -8,29 +8,6 @@ public class APIManager : MonoBehaviour {
 
     public static APIManager instancia;
 
-    public GameObject botonIniciarSesion;
-    public GameObject botonCuenta;
-
-    
-
-     void Start()
-    {
-        string token = PlayerPrefs.GetString("token", "");
-
-        if(token != "")
-        {
-            Debug.Log("Usuario logueado: " + PlayerPrefs.GetString("username"));
-            
-            botonIniciarSesion.SetActive(false);
-            botonCuenta.SetActive(true);
-            
-        }
-        else
-        {
-            Debug.Log("No hay sesión guardada");
-        }
-    }
-
     private void Awake()
     {
         if (instancia == null)
@@ -84,9 +61,6 @@ public class APIManager : MonoBehaviour {
             PlayerPrefs.SetString("username", resp.usuario.nombreDeUsuario);
             PlayerPrefs.Save();
             Debug.Log("Log in exitoso");
-            botonIniciarSesion.SetActive(false);
-            botonCuenta.SetActive(true);
-            
             onDone?.Invoke(resp);
         } else {
             Debug.LogError("Login error: " + uwr.error + " - " + uwr.downloadHandler.text);
@@ -95,16 +69,7 @@ public class APIManager : MonoBehaviour {
     }
 
 
-    public void Logout()
-    {
-        PlayerPrefs.DeleteKey("token");
-        PlayerPrefs.DeleteKey("username");
-        PlayerPrefs.Save();
-
-        Debug.Log("Sesión cerrada correctamente.");
-        botonIniciarSesion.SetActive(true);
-        botonCuenta.SetActive(false);
-    }
+    
 
 //----------------Recuperar datos de usuario------------------------
     /*public class UsuarioPerfil {

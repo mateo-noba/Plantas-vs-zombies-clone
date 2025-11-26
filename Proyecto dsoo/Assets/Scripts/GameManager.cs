@@ -37,6 +37,9 @@ public class GameManager : MonoBehaviour
 
     public botonesMenu botonesScript;
 
+    public GameObject botonIniciarSesion;
+    public GameObject botonCuenta;
+
     bool modoPala = false;
 
     void Start()
