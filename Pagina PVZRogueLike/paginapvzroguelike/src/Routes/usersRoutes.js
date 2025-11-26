@@ -1,5 +1,5 @@
 import express from "express";
-import { showUser, sigUpUser, logInUser, scoreBoard } from "../Controllers/userController.js";
+import { showUser, sigUpUser, logInUser, scoreBoard, updateScore } from "../Controllers/userController.js";
 import User from "../Models/User.js";
 import { verifyToken } from "../Middleware/verifyToken.js";
 
@@ -18,5 +18,7 @@ router.get("/perfil", verifyToken, async (req, res) => {
 
   res.json({ usuario });
 });
+
+router.post("/actualizarPuntaje", verifyToken, updateScore)
 
 export default router;

@@ -118,3 +118,32 @@ export const scoreBoard = async (req, res) =>{
         res.status(500).json({message: "Error al obtener el score board"})
     }
 }
+
+export const updateScore = async (req, res) => {
+    try {
+        const { puntaje } = req.body;
+
+        const usuario = await User.findOne({ id: req.user.id });
+
+        if (!usuario) {
+            return res.status(404).json({ message: "Usuario no encontrado" });
+        }
+
+        usuario.ultimoPuntaje = puntaje;
+
+        if (puntaje > usuario.mejorPuntaje) {
+            usuario.mejorPuntaje = puntaje;
+        }
+
+        await usuario.save();
+
+        res.json({
+            message: "Puntaje actualizado",
+            mejorPuntaje: usuario.mejorPuntaje,
+            ultimoPuntaje: usuario.ultimoPuntaje
+        });
+        
+    } catch (error) {
+        res.status(500).json({ message: "Error al actualizar puntaje" });
+    }
+};
