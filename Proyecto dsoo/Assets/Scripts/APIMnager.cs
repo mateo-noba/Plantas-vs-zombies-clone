@@ -72,7 +72,9 @@ public class APIManager : MonoBehaviour {
     
 
 //----------------Recuperar datos de usuario------------------------
-    /*public class UsuarioPerfil {
+
+    [Serializable]
+    public class UsuarioPerfil {
         public int id;
         public string nombreDeUsuario;
         public string email;
@@ -80,6 +82,7 @@ public class APIManager : MonoBehaviour {
         public int ultimoPuntaje;
     }
 
+    [Serializable]
     public class PerfilResponse {
         public UsuarioPerfil usuario;
     }
@@ -107,7 +110,7 @@ public class APIManager : MonoBehaviour {
     }
 
 //--------------------Actualizar puntaje-----------------------------------
-    public class PuntajeRequest {
+    /*public class PuntajeRequest {
         public int puntaje;
     }
 

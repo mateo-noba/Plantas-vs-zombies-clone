@@ -18,6 +18,10 @@ public class botonesMenu : MonoBehaviour
     public GameObject botonIniciarSesion;
     public GameObject botonCuenta;
 
+    public TMP_Text nombreUsuario;
+    public TMP_Text mejorPuntaje;
+    public TMP_Text ultimoPuntaje;
+
     void Start()
     {
         if(botonCuenta != null && botonIniciarSesion != null)
@@ -130,6 +134,25 @@ public class botonesMenu : MonoBehaviour
         {
             Debug.Log("No hay sesión guardada");
         }
+    }
+
+    public void cargarPerfilCuenta()
+    {
+        StartCoroutine(APIManager.instancia.CargarPerfil((resp) =>
+        {
+          if(resp != null && resp.nombreDeUsuario != null)
+            {
+                nombreUsuario.text = $"Nombre: {resp.nombreDeUsuario}";
+
+                mejorPuntaje.text = $"Mejor puntaje: {resp.mejorPuntaje}";
+
+                ultimoPuntaje.text = $"Ultimo puntaje: {resp.ultimoPuntaje}";
+            }
+            else
+            {
+                Debug.Log("No se pudo recuperar la informacion del usuario");
+            }
+        }));
     }
 
 }
