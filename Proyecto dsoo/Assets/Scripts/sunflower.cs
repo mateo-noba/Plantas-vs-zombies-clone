@@ -12,7 +12,7 @@ public class sunflower : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(frecuenciaSol);
-            Instantiate(Sol, transform.position + Vector3.up * Random.Range(0f, 1f) + Vector3.left * Random.Range(-1f, 1f), Sol.transform.rotation);
+            Instantiate(Sol, transform.position + Vector3.up * Random.Range(0f, 1f) + Vector3.left * Random.Range(-1f, 1f) + Vector3.forward * 10f, Sol.transform.rotation);
         }
 
     }

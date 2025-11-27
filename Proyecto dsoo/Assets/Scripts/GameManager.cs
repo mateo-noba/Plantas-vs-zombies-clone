@@ -135,6 +135,7 @@ public class GameManager : MonoBehaviour
         {
             panelPerder.SetActive(true);
             Time.timeScale = 0f;
+            StartCoroutine(APIManager.instancia.EnviarPuntaje(puntajeActual));
         }
     }
     void CrearPlanta(int numero, Transform t)
@@ -163,7 +164,7 @@ public class GameManager : MonoBehaviour
 
             float inicioY = maxY + 4f;
 
-            Vector3 inicio = new Vector3(x, inicioY, 0);
+            Vector3 inicio = new Vector3(x, inicioY, 10);
 
             float finalY = Random.Range(minY, maxY);
             yield return new WaitForSeconds(Random.Range(3f, 5f));

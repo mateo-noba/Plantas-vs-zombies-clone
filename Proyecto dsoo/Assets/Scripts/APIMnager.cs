@@ -110,7 +110,7 @@ public class APIManager : MonoBehaviour {
     }
 
 //--------------------Actualizar puntaje-----------------------------------
-    /*public class PuntajeRequest {
+    public class PuntajeRequest {
         public int puntaje;
     }
 
@@ -139,5 +139,5 @@ public class APIManager : MonoBehaviour {
                 Debug.LogError("Error enviando puntaje: " + uwr.error);
             }
         }
-    }*/
+    }
 }
