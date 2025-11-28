@@ -31,6 +31,7 @@ public class botonesMenu : MonoBehaviour
     }
     public void jugar(string nombreScena)
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(nombreScena);
     }
     public void Salir()
@@ -125,7 +126,7 @@ public class botonesMenu : MonoBehaviour
         if(token != "")
         {
             Debug.Log("Usuario logueado: " + PlayerPrefs.GetString("username"));
-            
+            APIManager.instancia.logeado = true;
             botonIniciarSesion.SetActive(false);
             botonCuenta.SetActive(true);
             
@@ -133,6 +134,7 @@ public class botonesMenu : MonoBehaviour
         else
         {
             Debug.Log("No hay sesión guardada");
+            APIManager.instancia.logeado = false;
         }
     }
 

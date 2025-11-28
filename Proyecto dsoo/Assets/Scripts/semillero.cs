@@ -31,6 +31,7 @@ public class semillero : MonoBehaviour
             Image cartaImagen = crearCarta.GetComponent<Image>();
             cartaImagen.sprite = plantasUsar[i].semillaPlanta;
 
+
             // Asignar botón
             Button btn = crearCarta.GetComponent<Button>();
             botones.Add(btn);
@@ -52,7 +53,18 @@ public class semillero : MonoBehaviour
             // Configurar clic
             int j = i;
             btn.onClick.RemoveAllListeners();
-            btn.onClick.AddListener(() => SeleccionarPlanta(j));
+            btn.onClick.AddListener(() =>
+            {
+                SeleccionarPlanta(j);
+                
+                foreach(Button b in botones)
+                {
+                    b.GetComponent<Image>().color = Color.white;
+                };
+
+                btn.GetComponent<Image>().color = Color.softYellow;
+
+            });
 
             // Inicializar tiempos
             tiempoRestante[i] = 0f;

@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::plantas
   semillaPlanta: {fileID: -6621399272459155314, guid: ce2b4c34b6502c94e8daa42cc1b50f52, type: 3}
   precio: 50
-  vida: 100
+  vida: 20
   tiempoRecarga: 30
 --- !u!212 &3380262925879384637
 SpriteRenderer:

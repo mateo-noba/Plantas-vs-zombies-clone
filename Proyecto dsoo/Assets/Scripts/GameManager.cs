@@ -135,9 +135,13 @@ public class GameManager : MonoBehaviour
         {
             panelPerder.SetActive(true);
             Time.timeScale = 0f;
-            StartCoroutine(APIManager.instancia.EnviarPuntaje(puntajeActual));
+            if(APIManager.instancia.logeado == true)
+            {
+                StartCoroutine(APIManager.instancia.EnviarPuntaje(puntajeActual));
+            }
         }
     }
+
     void CrearPlanta(int numero, Transform t)
     {
         if (semilleroScript.plantasUsar[numero].precio > soles)
@@ -149,7 +153,7 @@ public class GameManager : MonoBehaviour
             return; // si no hay planta válida seleccionada, no hagas nada
         }
 
-        GameObject planta = Instantiate(semilleroScript.plantasUsar[numero].gameObject, t.position, gameObject.transform.rotation);
+        GameObject planta = Instantiate(semilleroScript.plantasUsar[numero].gameObject, t.position + Vector3.forward * -2f, gameObject.transform.rotation);
         planta.transform.SetParent(t);
         gastarSoles(semilleroScript.plantasUsar[numero].precio);
         semilleroScript.numeroPlanta = -1;
@@ -164,10 +168,10 @@ public class GameManager : MonoBehaviour
 
             float inicioY = maxY + 4f;
 
-            Vector3 inicio = new Vector3(x, inicioY, 10);
+            Vector3 inicio = new Vector3(x, inicioY, -3);
 
             float finalY = Random.Range(minY, maxY);
-            yield return new WaitForSeconds(Random.Range(3f, 5f));
+            yield return new WaitForSeconds(Random.Range(6f, 12f));
             GameObject sol = Instantiate(solPrefab, inicio, Quaternion.identity);
             while (sol != null && sol.transform.position.y > finalY)
             {

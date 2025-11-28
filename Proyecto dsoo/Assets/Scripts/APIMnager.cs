@@ -8,6 +8,8 @@ public class APIManager : MonoBehaviour {
 
     public static APIManager instancia;
 
+    public bool logeado;
+
     private void Awake()
     {
         if (instancia == null)
@@ -61,10 +63,12 @@ public class APIManager : MonoBehaviour {
             PlayerPrefs.SetString("username", resp.usuario.nombreDeUsuario);
             PlayerPrefs.Save();
             Debug.Log("Log in exitoso");
+            logeado = true;
             onDone?.Invoke(resp);
         } else {
             Debug.LogError("Login error: " + uwr.error + " - " + uwr.downloadHandler.text);
             onDone?.Invoke(null);
+            logeado = false;
         }
     }
 
