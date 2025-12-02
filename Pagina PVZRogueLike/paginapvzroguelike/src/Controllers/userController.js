@@ -4,16 +4,6 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-export const showUser = async (req, res) => {
-    try{
-        const users =  await User.find();
-        res.json(users);
-    }catch(error){
-        console.log("No se pudo mostrar usuario");
-        res.status(500).json({error: "Error al mostrar usuario"});
-    }
-}
-
 export const sigUpUser = async (req, res) => {
     try{
 
@@ -104,6 +94,17 @@ export const logInUser = async (req, res) => {
         });
     }catch (error){
         res.status(500).json({message: "Error del servidor"});
+    }
+};
+
+export const showPerfil = async (req, res) => {
+    try{
+        const usuario = await User.findOne({ id: req.user.id });
+      
+        res.json({ usuario });
+
+    }catch (error){
+        res.status(500).json({message: "Error al obtener perfil"})
     }
 };
 
