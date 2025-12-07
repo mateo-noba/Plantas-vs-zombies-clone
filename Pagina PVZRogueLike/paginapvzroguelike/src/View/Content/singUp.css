@@ -1,0 +1,136 @@
+body{
+    background-color: rgb(33, 37, 41);
+}
+
+.overlaySingUp{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(30, 29, 29, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parteRegistro{
+    width: 70vh;
+    height: 80vh;
+    background-color: rgb(33, 37, 41);
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    display: flex;                
+    justify-content: center;      
+    align-items: center; 
+    flex-direction: column;
+    border-radius: 15px;
+    border: solid 3.5px #343A40;
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.671));
+}
+
+.parteRegistro h2{
+    margin: 0;
+    font-size: 5vh;
+}
+
+.logoJuegoRegistro{
+    width: 10vh;
+    height: 10vh;
+}
+
+.divRegistro{
+    margin-bottom: 2vh;
+    display: flex;                
+    justify-content: center;      
+    align-items: center; 
+    flex-direction: column;
+}
+
+.divFormularioRegistro input{
+    width: 30vh;
+    height: 4.5vh;
+    margin-bottom: 2vh;
+    background-color: #1D2125;
+    color: white;
+    border: solid 1px white;
+}
+
+.divFormularioRegistro button{
+    display: block;                
+    justify-content: center;      
+    align-items: center; 
+    flex-direction: column;
+    width: 100%;
+    height: 6vh;
+    margin-top: 2vh;
+    border-radius: 15px;
+    background-color: #0366D6;
+    color: white;
+    font-size: 20px;
+    border: none;
+}
+
+@media (max-width: 900px) and (pointer: coarse){
+    .overlaySingUp{
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(30, 29, 29, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .parteRegistro{
+        width: 100%;
+        height: 100%;
+        background-color: rgb(33, 37, 41);
+        color: white;
+        font-size: 17px;
+        font-weight: bold;
+        display: flex;                
+        justify-content: center;      
+        align-items: center; 
+        flex-direction: column;
+        border-radius: 15px;
+        border: solid 3.5px #343A40;
+        filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.671));
+        overflow-y: auto;
+        scrollbar-width: none;
+    }
+}
+
+@media (orientation: landscape) and (pointer: coarse){
+    .divFormularioRegistro h2{
+        margin: 0;
+        font-size: 7vh;
+    }
+
+    .divFormularioRegistro label{
+        font-size: 3vh;
+    }
+
+    .divFormularioRegistro p{
+        font-size: 2vh;
+        color: #0366D6;
+        margin: 0;
+    }
+    
+    .divFormularioRegistro button{
+        display: block;                
+        justify-content: center;      
+        align-items: center; 
+        flex-direction: column;
+        width: 33vh;
+        height: 7vh;
+        margin-top: 2vh;
+        margin-bottom: 0vh;
+        border-radius: 15px;
+        background-color: #0366D6;
+        color: white;
+        font-size: 4vh;
+        border: none;
+    }
+}

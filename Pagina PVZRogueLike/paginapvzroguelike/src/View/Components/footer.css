@@ -72,3 +72,9 @@
     flex-direction: column;
     justify-content: center;
 }
+
+@media (max-width: 900px) and (pointer: coarse){
+    .pieDePagina{
+        display: none;
+    }
+}

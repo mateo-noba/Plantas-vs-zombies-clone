@@ -1,8 +1,10 @@
+//Importaciones de imagenes y css
 import './footer.css';
-import frustrella from '../imagenes/Starfruit-HD.png';
-import EALogo from '../imagenes/Electronic-Arts-Logo.png';
-import PopcapLogo from '../imagenes/popcap-logo.png';
+import frustrella from '../../imagenes/Starfruit-HD.png';
+import EALogo from '../../imagenes/Electronic-Arts-Logo.png';
+import PopcapLogo from '../../imagenes/popcap-logo.png';
 
+//Creación del componente footer
 export function Footer(){
 
     return(
