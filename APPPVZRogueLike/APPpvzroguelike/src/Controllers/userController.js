@@ -11,7 +11,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 //Exportamos el controlador que sirve para crear una cuenta/registrar usuarios
-export const sigUpUser = async (req, res) => {
+export const signUpUser = async (req, res) => {
     //Try para que trate de realizar el codigo de adentro, pero si no lo logra va al catch y tira error
     try{
 
@@ -160,7 +160,6 @@ export const updateScore = async (req, res) => {
 
         //Busca el usuario por su id
         const usuario = await User.findOne({ id: req.user.id });
-
         //Si no encuentra un usuario con esa id
         if (!usuario) {
             return res.status(404).json({ message: "Usuario no encontrado" });
@@ -173,7 +172,6 @@ export const updateScore = async (req, res) => {
         if (puntaje > usuario.mejorPuntaje) {
             usuario.mejorPuntaje = puntaje;
         }
-
         //Guarda los datos de usuario actualizados
         await usuario.save();
 

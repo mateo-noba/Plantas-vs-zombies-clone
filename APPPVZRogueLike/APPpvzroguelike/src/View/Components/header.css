@@ -94,9 +94,9 @@
     }
 
     #botonScore{
-        height: 5vh;
+        height: 6vh;
         width: 10vh;
-        margin: 0px;
+        margin-bottom: 1vh;
     }
 
     #botonHome{
@@ -106,8 +106,8 @@
     }
 
     #botonIniciarSesion{
-        height: 5vh;
-        width: 5vh;
+        height: 4vh;
+        width: 4vh;
         margin: 0px;
     }
 
@@ -118,8 +118,8 @@
     }
 
     #botonJugar{
-        height: 5vh;
-        width: 5vh;
+        height: 6vh;
+        width: 6vh;
         margin: 0px;
     }
 
@@ -134,5 +134,44 @@
         color: white;
         font-weight: bold;
         font-size: 60%;
+    }
+}
+
+@media (orientation: landscape) and (pointer: coarse){
+
+    #botonCuenta{
+        height: 10vh;
+        width: 10vh;
+        margin: 0px;
+    }
+
+    #botonScore{
+        height: 12vh;
+        width: 18vh;
+        margin: 0px;
+    }
+
+    #botonHome{
+        height: 10vh;
+        width: 10vh;
+        margin: 0px;
+    }
+
+    #botonIniciarSesion{
+        height: 9vh;
+        width: 9vh;
+        margin: 0px;
+    }
+
+    #botonSobreNosotros{
+        height: 10vh;
+        width: 12vh;
+        margin: 0px;
+    }
+
+    #botonJugar{
+        height: 12vh;
+        width: 12vh;
+        margin: 0px;
     }
 }

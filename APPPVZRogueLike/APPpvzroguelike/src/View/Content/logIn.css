@@ -2,7 +2,7 @@ body{
     background-color: rgb(33, 37, 41);
 }
 
-.overlaySingUp{
+.overlayLogin{
     top: 0;
     left: 0;
     width: 100%;
@@ -13,7 +13,7 @@ body{
     align-items: center;
 }
 
-.parteRegistro{
+.parteIniciarSesion{
     width: 70vh;
     height: 80vh;
     background-color: rgb(33, 37, 41);
@@ -29,34 +29,50 @@ body{
     filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.671));
 }
 
-.parteRegistro h2{
+.parteIniciarSesion h2{
     margin: 0;
-    font-size: 5vh;
+    font-size: 7vh;
 }
 
-.logoJuegoRegistro{
-    width: 10vh;
-    height: 10vh;
+.logoJuegoSesion{
+    width: 20vh;
+    height: 20vh;
 }
 
-.divRegistro{
-    margin-bottom: 2vh;
+.divIniciarSesion{
+    margin-bottom: 5vh;
     display: flex;                
     justify-content: center;      
     align-items: center; 
     flex-direction: column;
 }
 
-.divFormularioRegistro input{
-    width: 30vh;
+.divFormularioInicioSesion input{
+    width: 100%;
     height: 4.5vh;
-    margin-bottom: 2vh;
+    margin-bottom: 20px;
     background-color: #1D2125;
     color: white;
     border: solid 1px white;
 }
 
-.divFormularioRegistro button{
+#inputContraseña{
+    margin-bottom: 10px;
+}
+
+.divFormularioInicioSesion p{
+    font-size: 2vh;
+    color: #0366D6;
+    margin: 0;
+}
+
+.divFormularioInicioSesion a{
+    text-decoration: none;
+    color: #0366D6;
+    margin: 0;
+}
+
+.divFormularioInicioSesion button{
     display: block;                
     justify-content: center;      
     align-items: center; 
@@ -67,12 +83,16 @@ body{
     border-radius: 15px;
     background-color: #0366D6;
     color: white;
-    font-size: 20px;
+    font-size: 3vh;
     border: none;
 }
 
-@media (max-width: 900px) and (pointer: coarse){
-    .overlaySingUp{
+.redireccionesDeCuenta{
+    margin: 0;
+}
+
+@media (max-width: 900px) and (pointer: coarse) {
+    .overlayLogin{
         top: 0;
         left: 0;
         width: 100%;
@@ -83,7 +103,7 @@ body{
         align-items: flex-start;
     }
 
-    .parteRegistro{
+    .parteIniciarSesion{
         width: 100%;
         height: 100%;
         background-color: rgb(33, 37, 41);
@@ -100,33 +120,56 @@ body{
         overflow-y: auto;
         scrollbar-width: none;
     }
+
+    .parteIniciarSesion h2{
+        margin: 0;
+        font-size: 5vh;
+    }
 }
 
 @media (orientation: landscape) and (pointer: coarse){
-    .divFormularioRegistro h2{
+        
+    .divIniciarSesion{
+        margin-top: 4vh;
+    }
+
+    .parteIniciarSesion h2{
         margin: 0;
         font-size: 7vh;
     }
 
-    .divFormularioRegistro label{
-        font-size: 3vh;
+    .divFormularioInicioSesion{
+        width: 30%;
     }
 
-    .divFormularioRegistro p{
-        font-size: 2vh;
+    .divFormularioInicioSesion label{
+        font-size: 4vh;
+    }
+
+    .divFormularioInicioSesion input{
+        width: 98%;
+        height: 8vh;
+        margin-bottom: 2vh;
+        background-color: #1D2125;
+        color: white;
+        border: solid 1px white;
+    }
+
+    .divFormularioInicioSesion p{
+        font-size: 4vh;
         color: #0366D6;
         margin: 0;
     }
     
-    .divFormularioRegistro button{
+    .divFormularioInicioSesion button{
         display: block;                
         justify-content: center;      
         align-items: center; 
         flex-direction: column;
-        width: 33vh;
-        height: 7vh;
+        width: 100%;
+        height: 10vh;
         margin-top: 2vh;
-        margin-bottom: 0vh;
+        margin-bottom: 12vh;
         border-radius: 15px;
         background-color: #0366D6;
         color: white;

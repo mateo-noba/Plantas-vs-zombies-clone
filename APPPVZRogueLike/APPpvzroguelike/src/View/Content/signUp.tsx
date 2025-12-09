@@ -2,15 +2,15 @@
 import { Footer } from "../Components/footer";
 import { Navbar } from "../Components/header";
 import logoPVZroguelike from '../../imagenes/fondoPVZroguelike.png';
-import './singUp.css';
+import './signUp.css';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 //Creacion de una variable para guardar la variable de entorno de la URL
 const API_URL = import.meta.env.VITE_API_URL;
 
-//Creación del componenete singup
-export function SingUp(){
+//Creación del componenete signup
+export function SignUp(){
     //Creacion de la variable de estado: nombre, email, contraseña, repcon
     const [nombreDeUsuario, setNombre] = useState("");
     const [email, setEmail] = useState("");
@@ -50,8 +50,8 @@ export function SingUp(){
     return(
         <div>
            <Navbar/>
-            <div className="partePrincipal">
-                <div className="overlaySingUp">
+           <div className="partePrincipal">
+                <div className="overlaySignUp">
                     <div className="parteRegistro">
                         <div className="divRegistro">
                             <img className="logoJuegoRegistro" src={logoPVZroguelike} alt="Logo"/>
@@ -69,8 +69,8 @@ export function SingUp(){
                                 <br/>
                                 <label>Contraseña</label>
                                 <br/>
-                                <input type="password" onChange={(e) => setContraseña(e.target.value)}/>
-                                <br></br>
+                                <input id="inputContraseña" type="password" onChange={(e) => setContraseña(e.target.value)}/>
+                                <br/>
                                 <label>Confirmar contraseña</label>
                                 <br/>
                                 <input type="password" onChange={(e) => setRepContraseña(e.target.value)}/>

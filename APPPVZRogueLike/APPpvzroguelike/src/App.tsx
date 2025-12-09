@@ -4,7 +4,7 @@ import {createBrowserRouter, Outlet, RouterProvider} from 'react-router-dom';
 import './App.css';
 import { MainPart } from './View/Content/mainPart';
 import { Login } from './View/Content/logIn';
-import { SingUp } from './View/Content/singUp';
+import { SignUp } from './View/Content/signUp';
 import { ScoreBoard } from './View/Content/scoreBoard';
 import { AboutUs } from './View/Content/aboutUs';
 import { Account } from './View/Content/account';
@@ -37,7 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'crearCuenta',
-        element: <SingUp/>
+        element: <SignUp/>
       },
       {
         path: 'clasificaciones',

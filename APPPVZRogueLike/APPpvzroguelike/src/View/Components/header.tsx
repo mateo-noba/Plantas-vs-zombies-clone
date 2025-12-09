@@ -68,7 +68,7 @@ export function Navbar(){
 
                 <a href="/"><img id='botonHome' src={botonHome} alt='home'/></a>
                 <a href="/sobreNosotros"><img id='botonSobreNosotros' src={botonSobreNosotros} alt='Sobre nosotros'/></a>
-                <a id='aBotonJugar' href='#'><img id='botonJugar' src={botonJugar} alt='Jugar'/></a>
+                <a id='aBotonJugar' href='#' onClick={(e) =>{e.preventDefault(); alert("Iniciando juego");}}><img id='botonJugar' src={botonJugar} alt='Jugar'/></a>
                 <a href="/clasificaciones"><img id='botonScore' src={botonScore} alt='scoreboard' /></a>
 
                 <a href='/cuenta'><img id='botonCuenta' src={botonCuenta} alt='boton cuenta'/></a>

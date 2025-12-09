@@ -2,7 +2,7 @@ body{
     background-color: rgb(33, 37, 41);
 }
 
-.overlayLogin{
+.overlaySignUp{
     top: 0;
     left: 0;
     width: 100%;
@@ -13,7 +13,7 @@ body{
     align-items: center;
 }
 
-.parteIniciarSesion{
+.parteRegistro{
     width: 70vh;
     height: 80vh;
     background-color: rgb(33, 37, 41);
@@ -29,56 +29,56 @@ body{
     filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.671));
 }
 
-.parteIniciarSesion h2{
+.parteRegistro h2{
     margin: 0;
-    font-size: 7vh;
+    font-size: 5vh;
 }
 
-.logoJuegoSesion{
+.logoJuegoRegistro{
     width: 20vh;
     height: 20vh;
 }
 
-.divIniciarSesion{
-    margin-bottom: 5vh;
+.divRegistro{
+    margin-bottom: 2vh;
     display: flex;                
     justify-content: center;      
     align-items: center; 
     flex-direction: column;
 }
 
-.divFormularioInicioSesion input{
-    width: 30vh;
+.divFormularioRegistro{
+    height: 100%;
+}
+
+.divFormularioRegistro input{
+    width: 98%;
     height: 4.5vh;
-    margin-bottom: 20px;
+    margin-bottom: 2vh;
     background-color: #1D2125;
     color: white;
     border: solid 1px white;
 }
 
-#inputContraseña{
-    margin-bottom: 10px;
-}
-
-.divFormularioInicioSesion p{
+.divFormularioRegistro p{
     font-size: 2vh;
     color: #0366D6;
     margin: 0;
 }
 
-.divFormularioInicioSesion a{
+.divFormularioRegistro a{
     text-decoration: none;
     color: #0366D6;
     margin: 0;
 }
 
-.divFormularioInicioSesion button{
+.divFormularioRegistro button{
     display: block;                
     justify-content: center;      
     align-items: center; 
     flex-direction: column;
-    width: 30vh;
-    height: 5vh;
+    width: 100%;
+    height: 6vh;
     margin-top: 2vh;
     border-radius: 15px;
     background-color: #0366D6;
@@ -92,18 +92,18 @@ body{
 }
 
 @media (max-width: 900px) and (pointer: coarse) {
-    .overlayLogin{
+    .overlaySignUp{
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         background: rgba(30, 29, 29, 0.6);
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: flex-start;
     }
 
-    .parteIniciarSesion{
+    .parteRegistro{
         width: 100%;
         height: 100%;
         background-color: rgb(33, 37, 41);
@@ -111,7 +111,7 @@ body{
         font-size: 17px;
         font-weight: bold;
         display: flex;                
-        justify-content: center;      
+        justify-content: flex-start;      
         align-items: center; 
         flex-direction: column;
         border-radius: 15px;
@@ -121,37 +121,61 @@ body{
         scrollbar-width: none;
     }
 
-    .parteIniciarSesion h2{
+    .parteRegistro::-webkit-scrollbar{
+    display: none;
+    }
+
+    .parteRegistro h2{
         margin: 0;
         font-size: 5vh;
+    }
+
+    .divFormularioRegistro label{
+        font-size: 3vh;
     }
 }
 
 @media (orientation: landscape) and (pointer: coarse){
-        .parteIniciarSesion h2{
+
+    .divRegistro{
+        margin-top: 2vh;
+    }
+
+    .parteRegistro h2{
         margin: 0;
         font-size: 7vh;
     }
 
-    .divFormularioInicioSesion label{
+    .parteRegistro::-webkit-scrollbar{
+    display: none;
+    }
+
+    .divFormularioRegistro{
+        width: 30%;
+    }
+
+    .divFormularioRegistro label{
         font-size: 4vh;
     }
 
-    .divFormularioInicioSesion p{
-        font-size: 2vh;
-        color: #0366D6;
-        margin: 0;
+    .divFormularioRegistro input{
+        width: 98%;
+        height: 8vh;
+        margin-bottom: 2vh;
+        background-color: #1D2125;
+        color: white;
+        border: solid 1px white;
     }
     
-    .divFormularioInicioSesion button{
+    .divFormularioRegistro button{
         display: block;                
         justify-content: center;      
         align-items: center; 
         flex-direction: column;
-        width: 33vh;
-        height: 7vh;
+        width: 100%;
+        height: 10vh;
         margin-top: 2vh;
-        margin-bottom: 12vh;
+        margin-bottom: 10vh;
         border-radius: 15px;
         background-color: #0366D6;
         color: white;

@@ -89,8 +89,9 @@ th{
 
     .parteScore{
         height: 85%;
-        width: 95%;
+        width: 85%;
         margin-top: 5%;
+        margin-bottom: 20vh;
         background-color: rgb(33, 37, 41);
         display: flex;
         align-items: flex-start;
