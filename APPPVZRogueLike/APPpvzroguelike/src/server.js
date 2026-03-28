@@ -31,6 +31,6 @@ app.get("/", (req, res) => {
 });
 
 //Creamos el servidor y le asignamos nuestras variables de entorno
-app.listen(process.env.PORT, process.env.IP, () => {
+app.listen(process.env.PORT, () => {
     console.log("Servidor en puerto " + process.env.PORT);
 })
