@@ -59,7 +59,7 @@ public class APIManager : MonoBehaviour {
         string json = JsonUtility.ToJson(reqObj);//Pasar los datos del objeto a json
 
         //Crea la peticion para la API
-        using var uwr = new UnityWebRequest("http://192.168.0.187:3000/api/inicioSesion", "POST") {//Le indica la url de la API y el metodo
+        using var uwr = new UnityWebRequest("http://localhost:3000/api/inicioSesion", "POST") {//Le indica la url de la API y el metodo
             uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(json)),//Le indica que es lo que le va a enviar
             downloadHandler = new DownloadHandlerBuffer()//Le indica que guarde la respuesta en la memoria
         };
@@ -113,7 +113,7 @@ public class APIManager : MonoBehaviour {
         string token = PlayerPrefs.GetString("token", "");
 
         //Crea la peticion
-        using (UnityWebRequest uwr = UnityWebRequest.Get("http://192.168.0.187:3000/api/perfil"))
+        using (UnityWebRequest uwr = UnityWebRequest.Get("http://localhost:3000/api/perfil"))
         {
             //Define el header de a petición y le pasa el token
             uwr.SetRequestHeader("Authorization", "Bearer " + token);
@@ -150,7 +150,7 @@ public class APIManager : MonoBehaviour {
         string json = JsonUtility.ToJson(data);//Lo tranforma en json
 
         //Crea la petición para la Api
-        using (UnityWebRequest uwr = new UnityWebRequest("http://192.168.0.187:3000/api/actualizarPuntaje", "POST"))
+        using (UnityWebRequest uwr = new UnityWebRequest("http://localhost:3000/api/actualizarPuntaje", "POST"))
         {
             uwr.uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(json));//Le indica que es lo que le va a enviar
             uwr.downloadHandler = new DownloadHandlerBuffer();//Le indica que guarde la respuesta en la memoria
