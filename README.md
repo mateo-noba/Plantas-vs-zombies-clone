@@ -21,6 +21,13 @@ El juego incluye mecánicas clásicas como plantar defensas, recolectar soles, a
 
 ---
 
+## 📸 Imagenes
+![Menú](APPPVZRogueLike/APPpvzroguelike/src/imagenes/FotoDelJuego1.png)
+
+![Gameplay](APPPVZRogueLike/APPpvzroguelike/src/imagenes/FondoDelJuego2.png)
+
+---
+
 ## 🛠️ Tecnologías utilizadas
 
 ### 🎮 Desarrollo del Juego
